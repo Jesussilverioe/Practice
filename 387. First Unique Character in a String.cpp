@@ -6,55 +6,59 @@
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int firstUniqChar(string s) {
-    
-    int found = -1;
-    unordered_map<char, int> mymap;
+    int firstUniqChar(string s)
+    {
 
-     for (int i = 0; i < s.size(); i++) {
-       mymap[s[i]] += 1;
-    }
+        int found = -1;
+        unordered_map<char, int> mymap;
 
-    for (int i = 0; i < s.size(); i++) {
-        if (mymap[s[i]] == 1) {
-            found = i;
-            return found;
+        for (int i = 0; i < s.size(); i++)
+        {
+            mymap[s[i]] += 1;
         }
-    }
-        
-        
-    return found;
+
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (mymap[s[i]] == 1)
+            {
+                found = i;
+                return found;
+            }
+        }
+
+        return found;
     }
 };
 
-
-int main() {
+int main()
+{
     string s = "c";
     //"aadadaad"
     //"leetcode"
     //"cc"
-    //int index = -1;
-    //int f = 0;
-   string s1 = "leetcode";
-   //string temp;
+    string s1 = "leetcode";
 
-   int found = -1;
-   unordered_map<char, int> mymap;
+    int found = -1;
+    unordered_map<char, int> mymap;
 
-   for (int i = 0; i < s.size(); i++) {
-       mymap[s[i]] += 1;
-   }
+    for (int i = 0; i < s.size(); i++)
+    {
+        mymap[s[i]] += 1;
+    }
 
-   for (int i = 0; i < s.size(); i++) {
-       if (mymap[s[i]] == 1) {
-           found = i;
-           break;
-       }
-   }
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (mymap[s[i]] == 1)
+        {
+            found = i;
+            break;
+        }
+    }
 
-   cout << found << endl;
+    cout << found << endl;
 
-   return 0;
+    return 0;
 }
